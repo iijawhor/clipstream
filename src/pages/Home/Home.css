@@ -1,0 +1,71 @@
+.home {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.homeMyFeedContainer {
+  padding: 20px 0;
+}
+.homeFeedTitle,
+.homeFeedError {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: var(--letter-spacing);
+  color: var(---txt-primary-color);
+}
+
+.homeFeedError {
+  text-align: center;
+  color: var(--background-color);
+}
+.Footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 0px 0;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+.homFooterCopyRight {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: var(--font-size) !important;
+  color: gray;
+}
+
+.homFooterCopyRight > p,
+.homeFooterIcon {
+  font-family: var(--font-family);
+  letter-spacing: 0.1rem;
+  font-size: var(--font-size-small) !important;
+}
+.homeFooterMoreIcon {
+  font-size: var(--font-size-big) !important;
+  cursor: pointer;
+  background-color: var(--background-color-light);
+
+  padding: 0px 5px;
+  color: var(--text-primary-color) !important;
+  border-radius: 5px;
+}
+.homeFooterMoreIcon:hover {
+  transition: 0.2s;
+  background-color: var(--background-color);
+  color: whitesmoke !important;
+}
+@media screen and (max-width: 960px) {
+  .home {
+    gap: 10px;
+  }
+  .homFooterCopyRight > p {
+    font-size: 0.7rem !important;
+  }
+  .homeFooterMoreIcon {
+    font-size: 0.8rem !important;
+  }
+}

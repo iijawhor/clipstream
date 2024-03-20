@@ -1,0 +1,28 @@
+@media screen and (max-width: 660px) {
+  .categories {
+    gap: 3px;
+  }
+  .categoriesTitle {
+    font-size: var(--font-size-small);
+  }
+  .categoryContainer {
+    gap: 3px;
+  }
+  .categoriesHeader {
+    align-items: start;
+    height: fit-content;
+  }
+  .categoriesTitle {
+    margin-bottom: 10px;
+  }
+  .categoryCard {
+    position: relative;
+    min-width: 50% !important;
+  }
+  .categoryCard > img {
+    height: 50px;
+  }
+  .categoryCard > h1 {
+    font-size: var(--font-size-small);
+  }
+}

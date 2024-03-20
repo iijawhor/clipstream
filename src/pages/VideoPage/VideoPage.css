@@ -1,0 +1,179 @@
+.videoPage {
+  position: relative;
+  align-items: center;
+}
+.videoPageVideoContainer {
+  width: 100%;
+}
+.videoPageVideoDetailsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+}
+.videoPageVideoContainer > video,
+img {
+  width: 100%;
+  background-position: center;
+  object-fit: cover;
+  height: 400px;
+}
+.videoPageVideoDetails {
+  flex: 3.5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.videoPageVideoDetailsHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+.videoPageDetailVideoTitle {
+  font-size: var(--font-size-normal);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 550;
+  color: #456;
+  font-family: var(--font-family);
+}
+
+.videoPageDetailVideoPublishingDate {
+  font-size: var(--font-size-small);
+  color: gray;
+  letter-spacing: var(--letter-spacing);
+}
+.videoPageDetailVideoChannel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+}
+.videoPageDetailVideoChannelLogo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+}
+.videoPageDetailVideoChannelName {
+  font-size: var(--font-size-normal);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-family);
+  color: black;
+}
+.videoPageVideoDetailsDescription {
+  display: flex;
+  border-bottom: 1px solid rgb(223, 223, 223);
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  gap: 8px;
+  flex-direction: column;
+  line-height: 1.2rem;
+}
+.videoPageVideoDetailsHeadActions {
+  display: flex;
+  position: relative;
+  height: fit-content;
+  gap: 20px;
+}
+.videoPageVideoDetailsHeadActions > p {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  color: #456;
+  cursor: pointer;
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+.videoPageVideoDetailsHeadActions > p > span {
+  font-size: var(--font-size-small);
+}
+.videoPageVideoDetailsDescriptionText {
+  font-size: var(--font-size-small);
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-family);
+}
+
+.videoPageDetailsCommentSectionHeaderTitle {
+  font-size: var(--font-size-normal);
+  color: #456;
+  letter-spacing: var(--letter-spacing);
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.videoPageDetailsComments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.videoPageDetailsComment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.videoPageDetailsCommentHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.videoPageDetailsCommentUserLogo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  text-align: center;
+}
+.videoPageDetailsCommentUserName {
+  margin-right: 8px;
+  font-size: var(--font-size-small);
+  font-family: var(--font-family);
+  color: black;
+}
+.videoPageDetailsCommentDate {
+  font-size: var(--font-size-small);
+  color: gray;
+  font-family: var(--font-family);
+}
+.videoPageDetailsCommentText {
+  font-size: var(--font-size-small);
+  color: rgb(73, 73, 73);
+  font-family: var(--font-family);
+  line-height: 1.4rem;
+}
+.videoPageVideoRelatedVideos {
+  flex: 1.5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.videoPageVideoRelatedVideosHeaderTitle {
+  font-size: 1.3rem;
+  font-family: var(--font-family);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
+  color: #456;
+  margin-bottom: 10px;
+}
+.videoPageVideoRelatedVideosHeaderautoPlayButton {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+.videoPageVideoRelatedVideosHeaderautoPlayButton > p {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+.videoPageVideoRelatedVideosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

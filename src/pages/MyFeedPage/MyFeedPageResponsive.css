@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .myFeedPge {
+    width: 100%;
+    padding: 80px 10px 10px;
+  }
+  .myFeedPageTitle {
+    font-size: 1.3rem !important;
+  }
+  .myFeedPageContainer {
+    flex-direction: column;
+  }
+  .myFeedPageItems {
+    width: 100%;
+  }
+  .myFeedPageCard {
+    width: 100%;
+    height: fit-content;
+  }
+}

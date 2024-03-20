@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.paginationViewAllButton {
+  font-size: var(--font-size);
+  color: var(--background-color);
+  letter-spacing: var(--letter-spacing);
+}
+.paginationButtons {
+  display: flex;
+  gap: 5px;
+}
+.paginationIcon {
+  font-size: var(--font-size) !important;
+  color: rgb(112, 112, 112);
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .paginationViewAllButton {
+    font-size: var(--font-size-small);
+  }
+  .paginationIcon {
+    font-size: 0.7em !important;
+  }
+}

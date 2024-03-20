@@ -1,0 +1,81 @@
+.categoryPage {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  margin: auto;
+  height: 68vh;
+  box-sizing: border-box;
+  padding: 5px;
+  overflow: auto;
+}
+.errorMessageInCategoryPage {
+  font-size: var(--font-size-normal);
+  color: var(--background-color);
+  font-family: var(--font-family);
+  margin: auto;
+}
+.categoryPageVideo {
+  padding-top: 73px;
+  min-width: 100%;
+  display: block;
+  height: fit-content;
+}
+.categoryPageHeroImage {
+  height: 35vh;
+  display: block;
+  width: 100%;
+  background-position: center;
+  object-fit: cover;
+}
+
+.activeCategory {
+  color: var(--background-color) !important;
+  background-color: rgb(236, 236, 236);
+}
+.categoryPageCategories {
+  position: relative;
+  width: 100%;
+  width: 20%;
+}
+.categoryPageCategories > ul {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 5px;
+}
+.categoryPageCategories > ul > li {
+  padding: 8px 15px;
+  font-family: var(--font-family);
+
+  font-size: var(--font-size);
+  color: rgb(81, 81, 81);
+  letter-spacing: 0.04em;
+  font-weight: 550;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid rgb(225, 225, 225);
+}
+.categoryPageCategoryVideos {
+  width: 60%;
+  overflow: auto;
+}
+.categoryPageCategoryVideosHeaderCategoryTitle {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  margin-bottom: 15px;
+}
+.categoryPageCategoryVideosHeaderCategoryTitle > span {
+  color: var(--background-color);
+  font-weight: 600;
+}
+.categoryPageCategoryVideoContainer {
+  display: grid;
+  gap: 20px;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+}
+.categoryPageCategoryVideoContainerCard {
+  position: relative;
+  height: fit-content;
+}

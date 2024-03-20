@@ -1,0 +1,66 @@
+@media screen and (max-width: 660px) {
+  .videoPageVideoDetails {
+    padding: 5px;
+  }
+  .videoPageVideoDetailsHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .videoPageVideoContainer > video {
+    height: 260px;
+  }
+  .videoPageVideoDetailHeadVideoDetail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .videoPageDetailVideoTitle {
+    font-size: var(--font-size);
+  }
+  .videoPageDetailVideoChannelName {
+    font-size: var(--font-size);
+  }
+  .videoPageVideoDetailsContainer {
+    flex-direction: column;
+  }
+  .videoPageVideoDetailsHeadActions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  .videoPageVideoDetailsHeadActions > p {
+    font-size: var(--font-size-small);
+  }
+  .videoPageDetailsCommentSectionHeaderTitle {
+    font-size: var(--font-size);
+  }
+  .videoPageDetailsCommentUserName {
+    font-size: var(--font-size);
+  }
+  .videoPageVideoRelatedVideosHeaderTitle {
+    font-size: var(--font-size);
+  }
+  .videoPageDetailsComments {
+    /* flex-direction: column; */
+    border: 1px solod blue;
+  }
+  .videoPageDetailsCommentSectionHeaderTitle {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    letter-spacing: 0.04em;
+  }
+  .videoPageDetailsComment {
+    flex-direction: column !important;
+    width: 100%;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding-bottom: 5px;
+  }
+  .videoPageDetailsCommentHeader {
+  }
+  .commentInteractions > p {
+    font-family: var(--font-family);
+    margin-top: 5px;
+    line-height: 1.3rem;
+  }
+}

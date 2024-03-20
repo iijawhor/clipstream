@@ -1,0 +1,32 @@
+@media screen and (max-width: 600px) {
+  .header {
+    padding: 10px;
+  }
+  .headerInputSearchOption,
+  .headerInput {
+    display: none;
+  }
+  .headerUpgradeOption {
+    display: none;
+  }
+  .headerRightIcon,
+  .headerUploadNewVideoOption > p,
+  .headerIcon {
+    display: none !important;
+  }
+  .headerUploadNewVideoOption {
+    padding: 1px;
+  }
+  .headerSearchIcon {
+    display: block !important;
+  }
+  .headerInputContainer {
+    position: absolute;
+    right: 40px;
+    border: none;
+  }
+  .headerAddIcon {
+    display: block !important;
+    cursor: pointer;
+  }
+}

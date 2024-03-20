@@ -1,0 +1,33 @@
+.recentVideos {
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color-light);
+  margin-top: 10px;
+}
+.recentVideosTitle {
+  font-size: var(--font-size-medium);
+  font-weight: 400;
+  font-family: var(--font-family);
+}
+.recentVideos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recentVideos > p {
+  font-size: var(--font-size);
+  color: var(--txt-primary-color);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.recentVideos > button {
+  color: var(--background-color);
+}

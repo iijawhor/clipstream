@@ -1,0 +1,16 @@
+@media screen and (max-width: 600px) {
+  .features {
+    width: 100%;
+    overflow: auto;
+  }
+  .featureItem {
+    min-width: fit-content;
+    padding: 5px;
+  }
+  .featureItem > div > h1 {
+    font-size: var(--font-size-small);
+  }
+  .featureItem > div > p {
+    font-size: 0.7rem;
+  }
+}

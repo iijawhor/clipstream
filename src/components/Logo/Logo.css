@@ -1,0 +1,6 @@
+.logo {
+  color: var(--txt-color-secondary);
+  font-size: 2rem;
+  letter-spacing: 0.01rem;
+  font-weight: 600;
+}

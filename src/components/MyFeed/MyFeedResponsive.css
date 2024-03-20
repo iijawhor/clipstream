@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .myFeedContainer {
+    padding: 10px 0 10px 0;
+  }
+  .myFeedHeader {
+    align-items: start;
+  }
+  .myFeedTitle {
+    font-size: var(--font-size);
+    margin-bottom: 10px;
+  }
+  .myFeed {
+    gap: 5px;
+  }
+  .myFeedCardContainer {
+    min-width: 100%;
+    height: fit-content;
+  }
+}

@@ -1,0 +1,142 @@
+.myFeedPge {
+  width: 70%;
+  margin: auto;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+}
+.myFeedPageTitle {
+  color: #456;
+  font-size: 1.5rem !important;
+  font-family: var(--font-family);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.myFeedPageContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+.myFeedPageItems {
+  flex: 2;
+}
+.myFeedPageRelatedVideos {
+  flex: 1;
+}
+.myFeedPageItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.myFeedPageCard {
+  height: fit-content;
+  border: 1px solid rgb(207, 207, 207);
+  background-color: rgba(252, 252, 252, 252);
+  cursor: pointer;
+}
+.feedPageCardImage {
+  height: 300px;
+}
+.myFeedPageTitle {
+  font-weight: 550;
+  font-size: var(--font-size-normal);
+  letter-spacing: 0.05em;
+}
+.myFeedPageChannel {
+  color: #456;
+}
+.myFeedPageRelatedVideos {
+  position: relative;
+}
+.gotToTop {
+  z-index: 1;
+  width: fit-content;
+  position: relative;
+  float: right;
+  height: 40px;
+  display: none !important;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: var(--background-color);
+  border-radius: 15%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.goToTopIcon {
+  font-size: var(--font-size-big) !important;
+  font-weight: 600 !important;
+  color: white;
+  margin: auto;
+}
+
+.activeButton {
+  position: fixed;
+  display: block !important;
+}
+.myFeedPageRelatedVideosUploadSection {
+  position: relative;
+  margin-bottom: 20px;
+}
+.myFeedPageRelatedVideosUploadButton {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: center;
+  font-family: var(--font-family);
+  text-align: center;
+  background-color: #456;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  padding: 10px;
+  color: white;
+  font-size: var(--font-size);
+  letter-spacing: 0.03em;
+}
+.myFeedPageWhatsNewSection {
+  position: relative;
+}
+.myFeedPageWhatsNewSection > h1 {
+  font-size: var(--font-size-normal);
+  font-family: var(--font-family);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: #fdebf3;
+  padding: 8px;
+  text-align: center;
+  color: #f49ac1;
+  margin-bottom: 15px;
+}
+.myFeedPageWhatsNewLists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.myFeedPageWhatsNewLists > li {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui;
+  gap: 5px;
+  border-bottom: 1px solid rgb(213, 213, 213);
+  padding-bottom: 10px;
+}
+.myFeedPageWhatsNewLists > li > h2 {
+  font-size: var(--font-size);
+  letter-spacing: var(--letter-spacing);
+  color: #456;
+  font-weight: 600;
+}
+.myFeedPageWhatsNewPostedBy {
+  font-size: var(--font-size-small);
+  color: gray;
+  font-weight: 300;
+}
+.myFeedPageWhatsNewDescription {
+  font-size: 0.9em;
+  letter-spacing: 0.004em;
+  color: gray;
+}

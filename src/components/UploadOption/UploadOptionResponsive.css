@@ -1,0 +1,28 @@
+@media screen and (max-width: 600px) {
+  .uploadOption {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .uploadOptionDetails {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .uploadOptionDetails > h1 {
+    font-size: var(--font-size);
+  }
+  .uploadOptionDetails > p {
+    width: 100%;
+    font-size: var(--font-size-small);
+    margin-bottom: 5px;
+  }
+  .uploadOptionUploadButton {
+    width: 100%;
+  }
+  .uploadOptionUploadButton::placeholder {
+    color: black;
+    padding-left: 5px;
+  }
+  .uploadOptionVideoContainer > video {
+    height: 150px;
+  }
+}
