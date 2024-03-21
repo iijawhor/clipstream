@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import "./HeaderResponsive.css";
 import {
@@ -10,8 +10,12 @@ import {
   SearchIcon,
   VideoLibraryOutlinedIcon,
   NotificationsOutlinedIcon,
-  AddIcon
+  AddIcon,
+  fetchFromAPI
 } from "../../exports/exports";
+import { setSearchData, setLoading } from "../../store/searchSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Header() {
   const navigationItems = [
     { name: "manage videos", icon: "KeyboardArrowDownIcon", id: 1 },
@@ -21,22 +25,59 @@ function Header() {
     { name: "upgrade", id: 5 },
     { name: "manage videos", id: 6 }
   ];
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (searchQuery !== "") {
+      try {
+        setError("");
+        dispatch(setLoading(true));
+        const searchResponse = await fetchFromAPI(
+          `search/?query=${searchQuery}`
+        );
+        setSearchResults(searchResponse?.videos);
+        dispatch(setSearchData(searchResponse?.videos));
+        dispatch(setLoading(false));
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+        console.log("Error in search component ::", error);
+      } finally {
+        dispatch(setLoading(false));
+        navigate("/search-results", {
+          state: { searchQuery: searchQuery }
+        });
+      }
+    }
+  };
+
   return (
     <Container>
       <div className="header">
         <div className="headerSearchAndLogoContainer">
           <Logo />
-          <div className="headerInputContainer">
-            <div className="headerInputSearchOption">
-              <VideoLibraryOutlinedIcon className="headerIcon" />
-              <KeyboardArrowDownIcon className="headerIcon" />
+          <form action="" onSubmit={handleSearch} className="headerSearchForm">
+            <div className="headerInputContainer">
+              <div className="headerInputSearchOption">
+                <VideoLibraryOutlinedIcon className="headerIcon" />
+                <KeyboardArrowDownIcon className="headerIcon" />
+              </div>
+              <Input
+                className="headerInput"
+                placeholder="Search videos, folders, and more..."
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
             </div>
-            <Input
-              className="headerInput"
-              placeholder="Search videos, folders, and more..."
-            />
-            <SearchIcon className="headerSearchIcon headerIcon" />
-          </div>
+            <button type="submit">
+              <SearchIcon className="headerSearchIcon headerIcon" />
+            </button>
+          </form>
         </div>
         <div className="headerRightContainer">
           <div className="headerUpgradeOption">Upgrade</div>

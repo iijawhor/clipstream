@@ -16,12 +16,22 @@
   align-items: center;
   gap: 20px;
 }
+.headerSearchForm {
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+  padding: 0 5px;
+}
 .headerInputContainer {
   display: flex;
   gap: 5px;
   align-items: center;
-  border: 1px solid rgb(220, 220, 220);
-  border-radius: 5px;
   padding: 0 5px;
 }
 .headerInputSearchOption {
