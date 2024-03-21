@@ -44,7 +44,7 @@ function VideoPage() {
         );
 
         dispatch(setRelatedVideo(relatedVideos?.videos));
-        console.log("video page related video", relatedVideos.videos.videos);
+        console.log("video page related video", relatedVideos.videos);
 
         const videoData = await fetchFromAPI(`video/data?video_id=${id}`);
 
@@ -87,7 +87,7 @@ function VideoPage() {
                     }
                   >
                     <img
-                      src={videoDetail?.thumbnails?.url}
+                      src={videoDetail?.thumbnails?.[0]?.url}
                       alt="logo"
                       className="videoPageDetailVideoChannelLogo"
                     />

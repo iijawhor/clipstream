@@ -19,7 +19,8 @@ function CategoryDetails() {
         setCategoryData(categoryResult?.videos || []);
         setLoading(false);
       } catch (error) {
-        setError("Netwrok Error! Refresh the page");
+        setError("Network Error , Refresh the page");
+        console.log("Errior in category Details ", error.message);
         setLoading(false);
       }
     })();
@@ -34,39 +35,42 @@ function CategoryDetails() {
         </h1>
 
         <div className="categoryDetailsVodeos">
+          <p className="categoryDetailsError"> {error && error}</p>
           {loading ? (
-            <p className="categoryDetailsVodeosLoadinTitle">
+            <p className="categoryDetailsVideosLoadingTitle">
               Loading {name} videos....
             </p>
+          ) : categoryData.length === 0 ? (
+            <p className="categoryDetailsError">
+              No videos found. Network Error
+            </p>
           ) : (
-            <>
-              {categoryData.map((categoryVideo) => (
-                <div
-                  className="categoryDetailsVodeo"
-                  onClick={() =>
-                    navigate(`/video-page/${categoryVideo.video_id}`)
-                  }
-                >
-                  <Card
-                    video={categoryVideo.video_id}
-                    className="categoryDetailsCard"
-                    img={categoryVideo.thumbnails[0].url}
-                    title={categoryVideo.title}
-                    channelName={categoryVideo.author}
-                    views={categoryVideo.number_of_views}
-                    publishDate={categoryVideo.published_time}
-                    imgClass="categoryDetailsCardImg"
-                    description={categoryVideo.description}
-                    titleClass="categoryDetailsCardTitle"
-                    channelClass="categoryDetailsCardChannel"
-                    channelId={categoryVideo.channel_id}
-                  />
-                </div>
-              ))}
-            </>
+            categoryData.map((categoryVideo) => (
+              <div
+                key={categoryVideo.video_id}
+                className="categoryDetailsVideo"
+                onClick={() =>
+                  navigate(`/video-page/${categoryVideo.video_id}`)
+                }
+              >
+                <Card
+                  video={categoryVideo.video_id}
+                  className="categoryDetailsCard"
+                  img={categoryVideo.thumbnails[0].url}
+                  title={categoryVideo.title}
+                  channelName={categoryVideo.author}
+                  views={categoryVideo.number_of_views}
+                  publishDate={categoryVideo.published_time}
+                  imgClass="categoryDetailsCardImg"
+                  description={categoryVideo.description}
+                  titleClass="categoryDetailsCardTitle"
+                  channelClass="categoryDetailsCardChannel"
+                  channelId={categoryVideo.channel_id}
+                />
+              </div>
+            ))
           )}
         </div>
-        <p className="categoryDetailsError"> {error && error}</p>
       </div>
     </Container>
   );

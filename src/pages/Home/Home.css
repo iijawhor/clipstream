@@ -8,8 +8,7 @@
 .homeMyFeedContainer {
   padding: 20px 0;
 }
-.homeFeedTitle,
-.homeFeedError {
+.homeFeedTitle {
   font-size: var(--font-size);
   font-family: var(--font-family);
   font-weight: 400;
@@ -17,8 +16,12 @@
   letter-spacing: var(--letter-spacing);
   color: var(---txt-primary-color);
 }
-
 .homeFeedError {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: var(--letter-spacing);
   text-align: center;
   color: var(--background-color);
 }

@@ -20,11 +20,12 @@ function CategoryPage({ video }) {
         `search/?query=${selectedCategory}`
       );
       setCategorySearchedData(categorySearchData?.videos || []);
-
+      console.log("categorySearchData", categorySearchData);
       setLoading(false);
     } catch (error) {
-      setLoading(false);
       setError("Something went wrong!  Refresh the page");
+      setLoading(false);
+      console.log("eeror In Category Page::", error.message);
     }
   };
 
@@ -71,12 +72,12 @@ function CategoryPage({ video }) {
             <span> {selectedCategory}</span> videos
           </h1>
           <div className="categoryPageCategoryVideoContainer">
-            <p className="errorMessageInCategoryPage">{error}</p>
+            <p className="errorMessageInCategoryPage">{error && error}</p>
 
             {loading ? (
-              <>
-                <p>Laoding...........</p>{" "}
-              </>
+              <p>Laoding...........</p>
+            ) : categorySearchedData.length === 0 ? (
+              <p>No videos Found : Network Error</p>
             ) : (
               <>
                 {categorySearchedData?.map((categorySearchData) => (

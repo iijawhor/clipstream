@@ -22,13 +22,11 @@ function Home() {
   const [response, setResponse] = useState();
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("use effect called");
     (async () => {
       try {
         setError("");
         setLoading(true);
         const feedResponse = await fetchFromAPI("search/?query=video");
-        console.log(feedResponse);
         dispatch(setFeedData(feedResponse?.videos));
         setResponse(feedResponse?.videos);
         setLoading(false);
@@ -38,7 +36,6 @@ function Home() {
         }
         setError("Network Error! Refresh the page");
         setLoading(false);
-        console.log(error);
       }
     })();
   }, []);

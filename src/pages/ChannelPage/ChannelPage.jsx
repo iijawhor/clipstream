@@ -10,7 +10,7 @@ import {
   fetchFromAPI
 } from "../../exports/exports";
 import { Link, useParams } from "react-router-dom";
-function ChannelPage({ xyz }) {
+function ChannelPage() {
   const { id } = useParams();
   const channelHeaderItems = [
     { name: "home", id: 1 },
@@ -36,6 +36,7 @@ function ChannelPage({ xyz }) {
           `channel/details?channel_id=${id}`
         );
         setChannelDetails(channelDetails);
+        console.log("Channek Details:::", channelDetails);
       } catch (error) {
         setError(error.message);
         setLoading(false);
@@ -59,11 +60,11 @@ function ChannelPage({ xyz }) {
         </div>
         <div className="channelPageDetailContainer">
           <div className="channelPageDetailsHeader">
-            <img src="" alt="channelImage" />
+            <img src={channelDetails?.banner?.[0]?.url} alt="channelImage" />
           </div>
           <div className="channelPageDetails">
             <div className="channelPageDetailsAvatar">
-              <img src={channelDetails?.url} alt="channelImage" />
+              <img src={channelDetails?.avatar?.[0]?.url} alt="channelImage" />
             </div>
             <div className="channelPageDetail">
               <h1 className="channelPageDetailChannelName">
@@ -71,19 +72,19 @@ function ChannelPage({ xyz }) {
               </h1>
               <div className="channelPageDetailChannelSubscriberDetails">
                 <p> {channelDetails?.subscriber_count}</p>
-                <p>channel video count</p>
+                {/* <p>channel video count</p> */}
               </div>
               <p className="channelDescription">
-                {channelDetails?.description}
+                {/* {channelDetails?.description} */}
               </p>
-
+              {/* 
               {channelDetails?.link && (
                 <div className="channleAuthorLinks">
                   {channelDetails.links.map((link) => (
                     <Link>{link?.endpoint}</Link>
                   ))}
                 </div>
-              )}
+              )} */}
               <div>
                 <button className="channelSubscribeButton">Subscribe</button>
               </div>
