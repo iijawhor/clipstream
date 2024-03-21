@@ -45,7 +45,6 @@ function Home() {
         <Features />
         <UploadOption />
         <RecentVideos />
-
         <div className="homeMyFeedContainer">
           <h1 className="homeFeedTitle">My Feed</h1>
           <Suspense fallback={<Loading />}>
@@ -56,7 +55,6 @@ function Home() {
             )}
           </Suspense>
         </div>
-
         <Categories />
       </section>
       <section className="Footer">

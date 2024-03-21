@@ -46,6 +46,8 @@ import ChannelPage from "../pages/ChannelPage/ChannelPage";
 import Loading from "../components/Loading/Loading";
 import Error from "../components/Error/Error";
 import CategoryDetails from "../pages/CategoryDetails/CategoryDetails";
+import SearchResults from "../components/SearchResults/SearchResults";
+
 export {
   fetchFromAPI,
   Home,
@@ -68,7 +70,8 @@ export {
   ChannelPage,
   Loading,
   Error,
-  CategoryDetails
+  CategoryDetails,
+  SearchResults
 };
 export {
   ThumbUpIcon,
