@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
@@ -9,18 +9,25 @@ import {
   VideoPage,
   CategoryPage,
   CategoryDetails,
-  ChannelPage
+  ChannelPage,
+  Loading
 } from "./exports/exports";
 import { Provider } from "react-redux";
 import { appStore } from "./store/appstore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const SearchResults = React.lazy(() =>
+  import("./components/SearchResults/SearchResults")
+);
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "", element: <Home /> }]
+    children: [
+      { path: "", element: <Home /> },
+      { path: "/search-results", element: <SearchResults /> }
+    ]
   },
   {
     path: "/my-feed",
@@ -41,6 +48,14 @@ const router = createBrowserRouter([
   {
     path: "/category-details/:id",
     element: <CategoryDetails />
+  },
+  {
+    path: "/search-result",
+    element: (
+      <Suspense fallback={<Loading />}>
+        <SearchResults />
+      </Suspense>
+    )
   }
 ]);
 
