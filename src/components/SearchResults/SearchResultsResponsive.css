@@ -1,0 +1,12 @@
+@media screen and (max-width: 600px) {
+  .searchResultItems {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 960px) {
+  .searchResultItems {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}

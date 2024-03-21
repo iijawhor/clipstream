@@ -1,0 +1,22 @@
+.searchResults {
+  position: relative;
+}
+.searchResultsHeader > h1 {
+  font-size: var(--font-size-big);
+  letter-spacing: var(--letter-spacing);
+  font-family: system-ui;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.searchResultsHeader > h1 > span {
+  color: var(--background-color);
+}
+.searchResultItems {
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.searchResult {
+  border: 1px solid rgb(223, 223, 223);
+}
