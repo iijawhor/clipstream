@@ -26,7 +26,15 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "", element: <Home /> },
-      { path: "/search-results", element: <SearchResults /> }
+      {
+        path: "/search-results",
+        element: (
+          <Suspense fallback={<Loading />}>
+            {" "}
+            <SearchResults />
+          </Suspense>
+        )
+      }
     ]
   },
   {
@@ -48,14 +56,6 @@ const router = createBrowserRouter([
   {
     path: "/category-details/:id",
     element: <CategoryDetails />
-  },
-  {
-    path: "/search-result",
-    element: (
-      <Suspense fallback={<Loading />}>
-        <SearchResults />
-      </Suspense>
-    )
   }
 ]);
 
