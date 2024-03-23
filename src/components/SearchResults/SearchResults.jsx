@@ -1,9 +1,9 @@
 import React from "react";
 import "./SearchResults.css";
 import "./SearchResultsResponsive.css";
-import { Card, Container } from "../../exports/exports";
+import { Card, Container, Error } from "../../exports/exports";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 function SearchResults() {
   const searchResults = useSelector(
     (state) => state.searchData.searchData || []
@@ -11,7 +11,7 @@ function SearchResults() {
   const loading = useSelector((state) => state.searchData.loading);
   const location = useLocation();
   const searchQuery = location.state.searchQuery;
-  console.log(loading);
+  const navigate = useNavigate();
   return (
     <Container>
       <div className="searchResults">
@@ -25,7 +25,13 @@ function SearchResults() {
             <p>Loading.........................</p>
           ) : searchResults.length > 0 ? (
             searchResults.map((searchResultDetails) => (
-              <div className="searchResult" key={searchResultDetails.video_id}>
+              <div
+                className="searchResult"
+                key={searchResultDetails.video_id}
+                onClick={() =>
+                  navigate(`/video-page/${searchResultDetails.video_id}`)
+                }
+              >
                 <Card
                   channelName={searchResultDetails.author}
                   description={searchResultDetails.description}
@@ -41,11 +47,7 @@ function SearchResults() {
               </div>
             ))
           ) : (
-            <p>
-              No results found. Network Error! Sometime the Youtube V2 Api
-              doesn't responding correctly that's why the error is. try again
-              and again it will respond.
-            </p>
+            <Error errorMessage="No data found! Network Error! this is happening for the RapidApi its not reponding correctly." />
           )}
         </div>
       </div>

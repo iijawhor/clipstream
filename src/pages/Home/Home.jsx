@@ -48,11 +48,7 @@ function Home() {
         <div className="homeMyFeedContainer">
           <h1 className="homeFeedTitle">My Feed</h1>
           <Suspense fallback={<Loading />}>
-            {error ? (
-              <p className="homeFeedError">{error}</p>
-            ) : (
-              <MyFeed loading={loading} />
-            )}
+            <MyFeed loading={loading} />
           </Suspense>
         </div>
         <Categories />

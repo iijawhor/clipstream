@@ -21,6 +21,7 @@ function Card({
   const handleNavigate = () => {
     navigate(`channel-page/${channelId}`);
   };
+
   return (
     <div className={`card ${className}`}>
       <div className="cardHeader">

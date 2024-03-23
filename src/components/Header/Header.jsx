@@ -44,15 +44,13 @@ function Header() {
         setSearchResults(searchResponse?.videos);
         dispatch(setSearchData(searchResponse?.videos));
         dispatch(setLoading(false));
+        navigate("/search-results", {
+          state: { searchQuery: searchQuery }
+        });
       } catch (error) {
         setError(error.message);
         setLoading(false);
         console.log("Error in search component ::", error);
-      } finally {
-        dispatch(setLoading(false));
-        navigate("/search-results", {
-          state: { searchQuery: searchQuery }
-        });
       }
     }
   };

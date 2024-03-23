@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./MyFeed.css";
 import "./MyFeedResponsive.css";
-import { Card, Container, Pagination } from "../../exports/exports";
+import { Card, Container, Pagination, Error } from "../../exports/exports";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 function MyFeed({ loading }) {
@@ -27,22 +27,26 @@ function MyFeed({ loading }) {
           <p>Loading...........</p>
         ) : (
           <>
-            {feedVideos.map((item, index) => (
-              <div
-                className="myFeedCardContainer"
-                key={index}
-                onClick={() => navigate(`/video-page/${item.video_id}`)}
-              >
-                <Card
-                  channelId={item.channel_id}
-                  title={item.author}
-                  views={item.number_of_views}
-                  channelName={item.title}
-                  publishDate={item.published_time}
-                  img={item.thumbnails[0].url}
-                />
-              </div>
-            ))}
+            {feedVideos.length !== 0 ? (
+              feedVideos.map((item, index) => (
+                <div
+                  className="myFeedCardContainer"
+                  key={index}
+                  onClick={() => navigate(`/video-page/${item.video_id}`)}
+                >
+                  <Card
+                    channelId={item.channel_id}
+                    title={item.author}
+                    views={item.number_of_views}
+                    channelName={item.title}
+                    publishDate={item.published_time}
+                    img={item.thumbnails[0].url}
+                  />
+                </div>
+              ))
+            ) : (
+              <Error errorMessage="Video data is not found! Network Error. This is happening cause the Rapid Api doesn't responding correctly. Refresh the Page" />
+            )}
           </>
         )}
       </div>
