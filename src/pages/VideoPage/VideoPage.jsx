@@ -162,7 +162,7 @@ function VideoPage() {
                   Recommendations
                 </h1>
                 <div className="videoPageVideoRelatedVideosHeaderautoPlayButton">
-                  <p>Auto play next video</p>
+                  {/* <p>Auto play next video</p> */}
                 </div>
               </div>
               <div className="videoPageVideoRelatedVideosContainer">
